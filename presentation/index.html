@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2 class="r-fit-text">Micro Frontend</h2>
+        </section>
+
+        <section>
+          <h2>
+            Micro frontend <br />
+            vs <br />
+            Monolith
+          </h2>
+        </section>
+
+        <section>
+          <img src="./images/monolith-frontback-microservices.png" />
+        </section>
+
+        <section>
+          <img src="./images/verticals-headline.png" />
+        </section>
+
+        <section>
+          <h3>Преимущества</h3>
+          <ul>
+            <li>Независимые релизы</li>
+            <li>Изоляция кода</li>
+            <li>У каждой команды свой полный цикл разработки</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ограничения</h3>
+          <ul>
+            <li>Общие ресурсы</li>
+            <li>Необходимость оркестрации приложения</li>
+            <li>Коммуникация между приложениями</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Имеет смысл, если</h3>
+          <ul>
+            <li>Большое приложение</li>
+            <li>Несколько команд разработки</li>
+            <li>Нужно переписать приложение</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Реализации</h2>
+        </section>
+
+        <section>
+          <h2>iframe</h2>
+        </section>
+
+        <section>
+          <pre><code data-trim data-noescape><script type="text/template">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/xvFZjo5PgG0?si=DmXTcMeHZ44RdgUl"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </script></code></pre>
+        </section>
+
+        <section>
+          <h3>iframe</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div>
+              <h5>Плюсы</h5>
+              <ul>
+                <li class="fragment">Простота использования</li>
+                <li class="fragment">Хорошая изоляция</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Минусы</h5>
+              <ul>
+                <li class="fragment">Сложности коммуникации</li>
+                <li class="fragment">Плохая гибкость</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Custom elements</h2>
+        </section>
+
+        <section>
+          <pre><code data-trim data-line-numbers="|1|2-8|10|13">
+            class MyCustomElement extends HTMLElement {
+              connectedCallback() {
+                this.innerHTML = `
+                  <button type="button">
+                      buy for 66,00 €
+                  </button>
+                `;
+              }
+
+              disconnectedCallback() { ... }
+            }
+            
+            window.customElements.define('my-element', MyCustomElement);
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Custom elements</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div>
+              <h5>Плюсы</h5>
+              <ul>
+                <li class="fragment">DOM API</li>
+                <li class="fragment">Нет зависимости от фреймворка</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Минусы</h5>
+              <ul>
+                <li class="fragment">Сам по себе не решает проблему коммуникации</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Module Federation</h2>
+        </section>
+
+        <section>
+          <h2>Angular?</h2>
+        </section>
+
+        <section>
+          <h2>Single SPA</h2>
+        </section>
+
+        <section>
+          <h3>Материалы</h3>
+          <ul>
+            <li><a href="https://micro-frontends.org/">micro-frontends.org</a></li>
+            <li><a href="https://www.youtube.com/watch?v=acAH2_YT6bs">Гайд по Webpack 5</a></li>
+            <li><a href="https://webpack.js.org/concepts/module-federation/">Module Federation</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Конец</h3>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
