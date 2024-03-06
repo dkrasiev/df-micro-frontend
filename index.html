@@ -1,19 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script type="module" crossorigin src="/micro-frontend-presentation/assets/index-CFwamVJI.js"></script>
-  <link rel="stylesheet" crossorigin href="/micro-frontend-presentation/assets/index-Dk0LC1vc.css">
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section>
-        <h1>Hello, Reveal.js</h1>
-      </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" crossorigin src="/assets/index-B8_g_nFd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C5l6_Cmj.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2 class="r-fit-text">Micro Frontend</h2>
+        </section>
+
+        <section>
+          <h2>
+            Micro frontend <br />
+            vs <br />
+            Monolith
+          </h2>
+        </section>
+
+        <section>
+          <img src="/assets/monolith-frontback-microservices-BLcsakZX.png" />
+        </section>
+
+        <section>
+          <h2>iframe</h2>
+        </section>
+
+        <section>
+          <pre><code data-trim data-noescape><script type="text/template">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/xvFZjo5PgG0?si=DmXTcMeHZ44RdgUl"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </script></code></pre>
+        </section>
+
+        <section>
+          <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div>
+              <h5>Плюсы</h5>
+              <ul>
+                <li>Простота использования</li>
+                <li>Хорошая изоляция</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Минусы</h5>
+              <ul>
+                <li>Сложности коммуникации</li>
+                <li>Плохая гибкость</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Custom elements</h2>
+        </section>
+
+        <section>
+          <pre><code data-trim data-line-numbers="|1|2-8|10|13|">
+            class MyCustomElement extends HTMLElement {
+              connectedCallback() {
+                this.innerHTML = `
+                  <button type="button">
+                      buy for 66,00 €
+                  </button>
+                `;
+              }
+
+              disconnectedCallback() { ... }
+            }
+            
+            window.customElements.define('my-element', MyCustomElement);
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code data-trim data-line-numbers="|1|2-8|10|13|">
+            class MyCustomElement extends HTMLElement {
+              connectedCallback() {
+                this.innerHTML = `
+                  <button type="button">
+                      buy for 66,00 €
+                  </button>
+                `;
+              }
+
+              disconnectedCallback() { ... }
+            }
+            
+            window.customElements.define('my-element', MyCustomElement);
+          </code></pre>
+        </section>
+
+        <section>
+          <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div>
+              <h5>Плюсы</h5>
+              <ul>
+                <li>Простота использования</li>
+                <li>Хорошая изоляция</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Минусы</h5>
+              <ul>
+                <li>Сложности коммуникации</li>
+                <li>Плохая гибкость</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
